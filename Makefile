@@ -1,4 +1,4 @@
-.PHONY: setup up down logs health test lint fmt check
+.PHONY: setup up down logs health test lint fmt check eval-list eval-selftest
 
 setup:
 	uv sync
@@ -29,3 +29,9 @@ fmt:
 	uv run ruff format .
 
 check: lint test
+
+eval-list:
+	uv run python -m evals.harness list
+
+eval-selftest:
+	uv run python -m evals.harness selftest

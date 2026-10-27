@@ -1,0 +1,6 @@
+{
+  "id": "T01",
+  "title": "Filtering by done returns the wrong todos",
+  "type": "bug",
+  "difficulty": "easy"
+}

@@ -1,0 +1,6 @@
+{
+  "id": "T03",
+  "title": "Add pagination to the list endpoint",
+  "type": "feature",
+  "difficulty": "medium"
+}

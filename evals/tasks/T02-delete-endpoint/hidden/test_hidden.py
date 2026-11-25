@@ -31,7 +31,8 @@ def test_delete_missing_returns_404_with_detail(client):
 def test_ids_are_not_reused(client):
     client.post("/todos", json={"title": "a"})
     second = client.post("/todos", json={"title": "b"}).json()
-    client.delete(f"/todos/{second['id']}")
+    deleted = client.delete(f"/todos/{second['id']}")
+    assert deleted.status_code == 204
     third = client.post("/todos", json={"title": "c"}).json()
     assert third["id"] == second["id"] + 1
 
